@@ -1,7 +1,7 @@
 FROM alpine
 
-COPY ./nginx_service.conf ./tmp/nginx_service.conf
-COPY ./index.html ./tmp/index.html
+COPY ./conf/nginx_service.conf ./tmp/nginx_service.conf
+COPY ./tools/index.html ./tmp/index.html
 
 RUN apk update
 RUN apk upgrade
