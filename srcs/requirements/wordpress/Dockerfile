@@ -18,4 +18,4 @@ RUN mkdir -p /run/nginx
 RUN mv ./tmp/nginx_service.conf ./etc/nginx/nginx.conf
 
 CMD nginx -g "daemon off;"
-EXPOSE 5050
+EXPOSE 9000

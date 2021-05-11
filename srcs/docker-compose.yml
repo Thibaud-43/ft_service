@@ -1,0 +1,36 @@
+version: '2'
+services:
+    nginx-service:
+        build: ./requirements/nginx
+        depends_on:
+            - wordpress-service
+        image: nginx-image
+        networks: 
+            - docker-network
+        ports:
+            - 80:80
+            - 443:443
+    db-service:
+        build: ./requirements/mariadb
+        image: mariadb-image
+        networks: 
+            - docker-network
+        volumes:
+            - dbdata:/var/lib/mysql
+        env_file: .env
+    wordpress-service:
+        build: ./requirements/wordpress
+        depends_on:
+            - db-service
+        image: wordpress-image
+        networks: 
+            - docker-network
+networks: 
+    docker-network:
+volumes:
+    dbdata:
+        driver: local
+        driver_opts:
+            type: 'none'
+            o: 'bind'
+            device: '/home/trouchon/data'

@@ -3,13 +3,6 @@ GREEN='\033[0;32m'
 NC='\033[0m'
 
 echo $RED
-echo "Creating nginx container ..."
+echo "START COMPOSE ..."
 echo $NC
-docker build -t nginx-image ./srcs/requirements/nginx
-docker run -d -p 80:80 -p 443:443 nginx-image
-
-echo $RED
-echo "Creating wordpress container ..."
-echo $NC
-docker build -t wordpress-image ./srcs/requirements/wordpress
-docker run -d -p 5050:5050 wordpress-image
+docker-compose up -d -f srcs/docker-compose.yml
