@@ -1,6 +1,9 @@
 all:			setup
 
 setup :	
+	#mkdir -p /data/DB
+	#mkdir -p /data/WordPress
+	#cp -R ./srcs/requirements/wordpress/tools/wordpress ./data/WordPress
 	docker-compose -f srcs/docker-compose.yml up -d
 stop:
 	docker-compose -f ./srcs/docker-compose.yml stop
