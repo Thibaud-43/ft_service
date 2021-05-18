@@ -23,10 +23,10 @@ services:
         depends_on:
             - db-service
         image: wordpress-image
-        volumes:
-            - wp-static:/www/
         networks: 
             - docker-network
+        volumes:
+            - wp-static:/www/
 networks: 
     docker-network:
 volumes:
@@ -35,10 +35,10 @@ volumes:
         driver_opts:
             type: 'none'
             o: 'bind'
-            device: '/Users/trouchon/Desktop/inception/data/DB'
+            device: '/home/trouchon/data/database'
     wp-static:
         driver: local
         driver_opts:
             type: 'none'
             o: 'bind'
-            device: '/Users/trouchon/Desktop/inception/data/WordPress'
+            device: '/home/trouchon/data/wordpress'
