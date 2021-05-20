@@ -1,7 +1,7 @@
 all:			setup
 
 setup :
-	cp -R -u -p ./srcs/requirements/wordpress/conf/wordpress/* /home/trouchon/data/wordpress
+	cp -R -u -p ./srcs/requirements/wordpress/conf/wordpress/* /home/trouchon/data/wordpress/
 	docker-compose -f srcs/docker-compose.yml up -d
 stop:
 	docker-compose -f ./srcs/docker-compose.yml stop
