@@ -8,6 +8,8 @@ RUN apt -y install mariadb-server mariadb-client
 RUN chmod +x ./tmp/setup.sh
 RUN rm /etc/mysql/my.cnf
 RUN mv ./tmp/my.cnf /etc/mysql/my.cnf
-ENTRYPOINT ./tmp/setup.sh
+RUN chmod 0444 /etc/mysql/my.cnf
+ENTRYPOINT ["./tmp/setup.sh"]
+
 
 EXPOSE 3306

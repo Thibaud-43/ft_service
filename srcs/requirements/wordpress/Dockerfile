@@ -15,6 +15,5 @@ RUN chmod -R 755 /www
 RUN chmod +x ./tmp/setup.sh
 RUN rm /etc/php/7.3/fpm/pool.d/www.conf && mv /tmp/www.conf /etc/php/7.3/fpm/pool.d/www.conf
 
-
 ENTRYPOINT ./tmp/setup.sh
 EXPOSE 9000
