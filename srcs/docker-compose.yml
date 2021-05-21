@@ -31,12 +31,15 @@ services:
             - wp-static:/www/
         env_file: .env
     adminer:
-        image: adminer
+        build: ./requirements/bonus/adminer
         restart: always
         networks: 
             - docker-network
-        ports:
-            - 8080:8080
+    cv:
+        build: ./requirements/bonus/cv
+        restart: always
+        networks: 
+            - docker-network
 networks: 
     docker-network:
 volumes:
