@@ -6,4 +6,4 @@ echo "GRANT ALL ON $MYSQL_DATABASE .* TO '$MYSQL_USER'@'%'" | mysql -u root
 echo "SHOW DATABASES" | mysql -u root
 mysql wordpress -u root < ./tmp/wordpress.sql
 service mysql stop
-/usr/sbin/mysqld -u root
+exec /usr/sbin/mysqld -u root
